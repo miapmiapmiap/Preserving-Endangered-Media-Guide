@@ -1,0 +1,40 @@
+# Archiving Endangered Films on the Internet
+
+## Mission Statement
+This GitHub guide is meant to advise archivists in archiving endangered films currently on the internet. In this project, we are defining "endangered" films as those only streaming on relatively unstable platforms such as YouTube, and are out of print on physical media. This project could also apply to other platforms such as Vimeo or Internet Archive, but we will focus on YouTube for the sake of brevity.
+
+## Disclaimers
+
+## Legality
+Downloading films from YouTube is a violation of their Terms of Service, but not illegal. Under U.S. Copyright Law Section 107, "the fair use of a copyrighted work, including such use by reproduction in copies or phonorecords or by any other means specified by that section, for purposes such as criticism, comment, news reporting, teaching (including multiple copies for classroom use), scholarship, or research, is not an infringement of copyright." This project is not applicable to materials that can be found on the secondhand market.
+
+## Security
+youtube-dl is blocked on GitHub. In order to download videos from YouTube using the Command Line, yt-dlp (a fork of youtube-dl) must be used. Also, downloading age restricted videos requires an extension, adding another layer of fallibility.
+
+YouTube has the right to block your account for violating their Terms of Service. If using yt-dlp, it is best not to use an institution's official computer or YouTube account. Using an incognito window is required. 
+
+##Guide
+
+# BagIt Information Data
+
+This is the step-by-step guide to creating a BagIt, a specification of a Submission Information Package (SIP)
+
+## Setting up a BagIt 
+
+1. Download content (video and.json) to specific folder.
+
+2. Install BagIt
+
+3. Conform folder to BagIt.
+
+### Example Set Up: 
+
+bagit.py
+
+Source-Organization: 'MIAP'
+Organization-Address: '721 Broadway, New York, New York, 10003'
+Contact-Name: 'Dana Polan'
+Contact-Email: 'pianoplayingman@gmail.com'
+External-Description: 'YouTube video and metadata file from amateur filmmaker Jake Marston.'
+Bag-Count: '1 of 1'
+
