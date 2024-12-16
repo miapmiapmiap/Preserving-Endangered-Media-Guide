@@ -63,36 +63,31 @@ $ `yt-dlp --cookies-from-browser examplebrowser --write-info-json- example "http
 **Before each session, run:**
 $ `brew upgrade yt-dlp`
 
-# BagIt Information Data
-
-This is the step-by-step guide to creating a BagIt, a specification of a Submission Information Package (SIP)
-
 ## Metadata 
+
+### Submission Information Packages (SIP)
+* SIPs include the data (payload) and all of the related metadata about the content of the payload.
+* It also includes a manifest of every file in the payload with its corresponding checksum.
+* You can can include descriptive elements that provide context such as provenance, contact information, environment of creation, etc.
+* SIPs can also have a README file with any additional information that should exist alongside the data.
+* You can think of SIPs as the file(s) and all the information one would need to facilitate future use.
+
+### BagIt Structure:
+* A set of required and optional tag files.
+* A subdirectory named "data" called the payload directory.
+* A set of optional tag directories.
+* The tag files in the base directory consist of one or more files named "**manifest-algorithm.txt**", a file named "**bagit.txt**", and zero or more additional tag files.
+
+### BagIt Guide:
 
 **Download content (video and .json) to specific folder.**
 
 **Install BagIt:**
-* **(Mac) `brew install bagit`
-* **(Linux) `pip install bagit`
+* **(Mac)** `brew install bagit`
+* **(Linux)** `pip install bagit`
 
-**Setup folder as BagIt:**
+**Setup and conform folder to BagIt:**
 **Example:**
 `bagit.py --source-organization 'organizationexample' --organization-address 'addressexample' --contact-name 'nameexample' --contact-email 'example@gmail.com' --external-description 'descriptionexample' --bag-count '1 of 1'`
 
-1. Download content (video and.json) to specific folder.
-
-2. Install BagIt
-
-3. Conform folder to BagIt.
-
-### Example Set Up: 
-
-bagit.py
-
-Source-Organization: 'MIAP'
-Organization-Address: '721 Broadway, New York, New York, 10003'
-Contact-Name: 'Dana Polan'
-Contact-Email: 'pianoplayingman@gmail.com'
-External-Description: 'YouTube video and metadata file from amateur filmmaker Jake Marston.'
-Bag-Count: '1 of 1'
 
