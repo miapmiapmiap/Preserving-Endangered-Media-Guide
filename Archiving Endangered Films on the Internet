@@ -44,7 +44,7 @@ $ `yt-dlp --cookies example.txt --write-info-json example "https://exampleurl.co
 **If the video is age-restricted, and the browser is installed, an example command would be:**
 $ `yt-dlp --cookies-from-browser examplebrowser --write-info-json example "htpps://exampleurl.com"`
 
-###MacOs
+###MacOS
 FFMPEG is required to properly run yt-dlp
 
 **To install FFMPEG:**
@@ -68,6 +68,16 @@ $ `brew upgrade yt-dlp`
 This is the step-by-step guide to creating a BagIt, a specification of a Submission Information Package (SIP)
 
 ## Metadata 
+
+**Download content (video and .json) to specific folder.**
+
+**Install BagIt:**
+* **(Mac) `brew install bagit`
+* **(Linux) `pip install bagit`
+
+**Setup folder as BagIt:**
+**Example:**
+`bagit.py --source-organization 'organizationexample' --organization-address 'addressexample' --contact-name 'nameexample' --contact-email 'example@gmail.com' --external-description 'descriptionexample' --bag-count '1 of 1'`
 
 1. Download content (video and.json) to specific folder.
 
