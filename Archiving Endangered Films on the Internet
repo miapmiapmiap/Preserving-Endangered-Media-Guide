@@ -13,6 +13,8 @@ youtube-dl is blocked on GitHub. In order to download videos from YouTube using 
 
 YouTube has the right to block your account for violating their Terms of Service. If using yt-dlp, it is best not to use an institution's official computer or YouTube account. Using an incognito window is required. 
 
+<https://github.com/yt-dlp/yt-dlp/wiki/Extractors#po-token-guide>
+
 ##Guide: yt-dlp
 
 ### Linux
@@ -41,6 +43,25 @@ $ `yt-dlp --cookies example.txt --write-info-json example "https://exampleurl.co
 
 **If the video is age-restricted, and the browser is installed, an example command would be:**
 $ `yt-dlp --cookies-from-browser examplebrowser --write-info-json example "htpps://exampleurl.com"`
+
+###MacOs
+FFMPEG is required to properly run yt-dlp
+
+**To install FFMPEG:**
+$ `brew install ffmpeg`
+
+**If the video is age-restricted, and the browser is not installed, cookies must be exported and downloaded. An example command would be:**
+$ `yt-dlp --cookies example.txt --write-info-json example "https://exampleurl.com"`
+
+**If the video is age restricted, and the browser is installed, an example command would be:**
+$ `yt-dlp --cookies-from-browser examplebrowser --write-info-json example "https://exampleurl.com"`
+
+**A video downloaded using yt-dlp will output the highest quality .mkv. If specified in the command (--write-info-json), a .json can be output. Do not transcode additonal files. For the purpose of archiving these videos, a .mkv file with copies is sufficient.**
+**An example command would be:**
+$ `yt-dlp --cookies-from-browser examplebrowser --write-info-json- example "https://exampleurl.com" --postprocessor-args "ffmpeg:-bitexact"`
+
+**Before each session, run:**
+$ `brew upgrade yt-dlp`
 
 # BagIt Information Data
 
