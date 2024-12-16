@@ -13,13 +13,40 @@ youtube-dl is blocked on GitHub. In order to download videos from YouTube using 
 
 YouTube has the right to block your account for violating their Terms of Service. If using yt-dlp, it is best not to use an institution's official computer or YouTube account. Using an incognito window is required. 
 
-##Guide
+##Guide: yt-dlp
+
+### Linux
+Needs Python and FFMPEG
+
+**To install FFMPEG:**
+$ `sudo apt install ffmpeg`
+
+**To install python:**
+$ `sudo apt-get install python3.13.0`
+
+**If python is installed but software cannot find it, use:**
+$ `sudo apt install python-is-python3`
+
+**A virtual Python environment must be created:**
+$ `python3 -m env python-env`
+
+**Then activate:**
+$ `source python-env/bin/activate`
+
+**Once the Python environment is activated, this command installs yt-dlp:**
+$ `pip3 install yt-dlp`
+
+**If the video is age-restricted, and the browser is not installed, cookies must be exported and downloaded. An example command would be:**
+$ `yt-dlp --cookies example.txt --write-info-json example "https://exampleurl.com"`
+
+**If the video is age-restricted, and the browser is installed, an example command would be:**
+$ `yt-dlp --cookies-from-browser examplebrowser --write-info-json example "htpps://exampleurl.com"`
 
 # BagIt Information Data
 
 This is the step-by-step guide to creating a BagIt, a specification of a Submission Information Package (SIP)
 
-## Setting up a BagIt 
+## Metadata 
 
 1. Download content (video and.json) to specific folder.
 
