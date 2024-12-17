@@ -10,12 +10,10 @@ for files in glob.glob('*/data/*.info.json'):
         data = json.load(json_data)
 
 bag = bagit.Bag(bag_dir)
-name = input("What is your name? \n")
 email = input("What is your email? \n")
 ext_des = input("Please describe the data in the bags (e.g. Youtube video and associated metadata from filmmaker Maurice Chevalier) \n")
 source_org = input("Please write the name of the institution you work for. \n")
 org_add = input("Please input the address of the institution you work for. \n")
-bag.info['Contact-Name'] = name
 bag.info['Contact-Email'] = email
 bag.info['External-Description'] = ext_des
 bag.info['Source-Organization'] = source_org

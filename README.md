@@ -66,11 +66,11 @@ python3 -v
 ```
 If no version appears e.g. `3.X.X`, you can install python by doing this:
 ```
-sudo apt-get install python3.13.0`
+sudo apt-get install python`
 ```
 Next, create a new python virtual environment :
 ```
-python3 -m env python-env
+python -m env python-env
 ```
 
 Activate your newly created virtual environment:
@@ -81,39 +81,42 @@ source python-env/bin/activate
 
 After activating, you can install yt-dlp:
 ```
-pip3 install yt-dlp
+pip install yt-dlp
 ```
 And finally Bagit:
 
 ```
-pip3 install bag-it
+pip install bag-it
 ```
 
 ### Using yt-dlp
+**CHECK FOR UPDATES**
+Before running yt-dlp, ensure that you are on the latest version of yt-dlp. If you are on MacOS that just means typing the following:
+```
+brew upgrade yt-dlp
+```
+On Linux make sure to activate your Python virtual environment:
+```
+source python-env/bin/activate
+```
+Then check for updates:
+```
+pip update yt-dlp
+```
+**Cookies (yum)**
+If the video is age-restricted, or you are worried about the possiblity of being banned from youtube, it is adviseable to follow this [tutorial](https://github.com/yt-dlp/yt-dlp/wiki/Extractors) on how to export your cookies from browser. Most browsers do not allow you to export your cookies out directly, so you will need to install an extension on your browser. Whatever name is exported, make sure the file is renamed `cookies.txt`.
+
+To download a video type the following:
+```
+yt-dlp --write-info-json example "https://exampleurl.com"`
+```
+Or feed yt-dlp cookies:
+```
+yt-dlp -P path/to/folder --cookies cookies.txt --write-info-json example "https://exampleurl.com"`
+```
+This command will download the video into a folder, but make sure to replace `path/to/folder` to a specified directory. Also make sure to replace `https://exampleurl.com` with a link to your YouTube video. 
 
 
-
-**If the video is age-restricted, and the browser is not installed, cookies must be exported and downloaded. An example command would be:**
-$ `yt-dlp --cookies example.txt --write-info-json example "https://exampleurl.com"`
-
-**If the video is age-restricted, and the browser is installed, an example command would be:**
-$ `yt-dlp --cookies-from-browser examplebrowser --write-info-json example "htpps://exampleurl.com"`
-
-###MacOS
-FFMPEG is required to properly run yt-dlp
-
-**To install FFMPEG:**
-
-
-**If the video is age-restricted, and the browser is not installed, cookies must be exported and downloaded. An example command would be:**
-$ `yt-dlp --cookies example.txt --write-info-json example "https://exampleurl.com"`
-
-**If the video is age restricted, and the browser is installed, an example command would be:**
-$ `yt-dlp --cookies-from-browser examplebrowser --write-info-json example "https://exampleurl.com"`
-
-**A video downloaded using yt-dlp will output the highest quality .mkv. If specified in the command (--write-info-json), a .json can be output. Do not transcode additonal files. For the purpose of archiving these videos, a .mkv file with copies is sufficient.**
-**An example command would be:**
-$ `yt-dlp --cookies-from-browser examplebrowser --write-info-json- example "https://exampleurl.com" --postprocessor-args "ffmpeg:-bitexact"`
 
 **Before each session, run:**
 $ `brew upgrade yt-dlp`
