@@ -2,7 +2,7 @@
 ## Mission Statement
 This is GitHub guide and tool meant to advise archivists on archiving endangered films currently on the internet storage at institutions. In this project, we are defining "endangered" films as those only streaming on relatively unstable platforms such as YouTube, and are out of print on physical media. This project could also apply to other video-hosting platforms but is currently untested.
 
-This project outputs a Sumbission Information Package (SIP) for ingestation into an institution according to the Library of Congress' [Bag-it](https://datatracker.ietf.org/doc/html/rfc8493) specification. 
+This project outputs a Submission Information Package (SIP) for ingestion into an institution according to the Library of Congress' [Bag-it](https://datatracker.ietf.org/doc/html/rfc8493) specification. 
 
 <details>
  <summary><strong>Here is a truncated explanation on SIPs and the Bag-it folder structure</strong></summary>
@@ -28,7 +28,7 @@ Downloading films from YouTube is a violation of their Terms of Service, but not
 This process is only known to be permissible under U.S. Law. The fair use analysis that justifies your download of a video is only valid if you live in the U.S. or a territory. Otherwise, it is incumbent upon you to determine whether or not your country allows for fair use. 
 
 ## Security
-The orignal youtube-dl repo is blocked. In order to download videos from YouTube using the Command Line, yt-dlp (a fork of youtube-dl) must be used. Most of the tools are third-party ones downloaded via command-line, which may be blocked depending on your institution's IT policies. 
+The original youtube-dl repo is blocked. In order to download videos from YouTube using the Command Line, yt-dlp (a fork of youtube-dl) must be used. Most of the tools are third-party ones downloaded via command-line, which may be blocked depending on your institution's IT policies. 
 
 YouTube has the right to block your account for violating their Terms of Service. If using yt-dlp, it is best not to use an institution's official computer or YouTube account. If this is done at significant scale, there is a chance you may be blocked from YouTube.
 
