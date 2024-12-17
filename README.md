@@ -90,7 +90,7 @@ pip install bag-it
 ```
 
 ### Using yt-dlp
-**CHECK FOR UPDATES**
+**CHECK FOR UPDATES:**
 Before running yt-dlp, ensure that you are on the latest version of yt-dlp. If you are on MacOS that just means typing the following:
 ```
 brew upgrade yt-dlp
@@ -103,7 +103,7 @@ Then check for updates:
 ```
 pip update yt-dlp
 ```
-**Cookies (yum)**
+**Cookies (yum):**
 If the video is age-restricted, or you are worried about the possiblity of being banned from youtube, it is adviseable to follow this [tutorial](https://github.com/yt-dlp/yt-dlp/wiki/Extractors) on how to export your cookies from browser. Most browsers do not allow you to export your cookies out directly, so you will need to install an extension on your browser. Whatever name is exported, make sure the file is renamed `cookies.txt`.
 
 To download a video type the following:
@@ -114,29 +114,42 @@ Or feed yt-dlp cookies:
 ```
 yt-dlp -P path/to/folder --write-info-json example --cookies cookies.txt "https://exampleurl.com"`
 ```
-This command will download the video into a folder, but make sure to replace `path/to/folder` to a specified directory. Also make sure to replace `https://exampleurl.com` with a link to your YouTube video. It puts the yt-dlp metadata in a json next to the downloaded video which will then be used in the bagging process.
+This command will download the video into a folder, but make sure to replace `path/to/folder` to a specified directory. Also make sure to replace `https://exampleurl.com` with a link to your YouTube video. It puts the yt-dlp metadata in a json next to the downloaded video which will then be used in the bagging process. 
 
-## Metadata 
+### Bag that Bidya
 
-### Submission Information Packages (SIP)
+Now that we have our video and metadata downloaded, we need to put them in a Bag. We can do this after installing bag-it by typing the following commmand:
+```
+bagit.py --contact-name 'Firstname Lastname' /directory/to/bag
+```
+
+`Firstname Lastname` should be replaced with your first and last name, and `/directory/to/bag`, the directory to your bag.
+
+**NOTE:** If you are a Linux user make sure you are activated into your python virtual environment.
+
+Next download this [python script](https://github.com/miapmiapmiap/Preserving-Endangered-Media-Guide/blob/main/yt-dlp_bagit.py) and put it in the same directory as the bagged folder (that means outside not inside.)
+
+Run the script by typing the following:
+```
+python yt-dlp_bagit.py
+```
+
+The script will ask you to input a lot of text, make sure as precisely as possible,
+
+
+## Submission Information Packages (SIP)
 * SIPs include the data (payload) and all of the related metadata about the content of the payload.
 * It also includes a manifest of every file in the payload with its corresponding checksum.
 * You can can include descriptive elements that provide context such as provenance, contact information, environment of creation, etc.
 * SIPs can also have a README file with any additional information that should exist alongside the data.
 * You can think of SIPs as the file(s) and all the information one would need to facilitate future use.
 
-### BagIt Structure:
+## BagIt Structure:
 * A set of required and optional tag files.
 * A subdirectory named "data" called the payload directory.
 * A set of optional tag directories.
 * The tag files in the base directory consist of one or more files named "**manifest-algorithm.txt**", a file named "**bagit.txt**", and zero or more additional tag files.
 
-### BagIt Guide:
-
-**Download content (video and .json) to specific folder.**
-
-**Setup and conform folder to BagIt:**
-**Example:**
-`bagit.py --source-organization 'organizationexample' --organization-address 'addressexample' --contact-name 'nameexample' --contact-email 'example@gmail.com' --external-description 'descriptionexample' --bag-count '1 of 1'`
+## BagIt Guide:
 
 
