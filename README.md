@@ -6,25 +6,50 @@ This GitHub guide is meant to advise archivists in archiving endangered films cu
 ## Disclaimers
 
 ## Legality
-Downloading films from YouTube is a violation of their Terms of Service, but not illegal. Under U.S. Copyright Law Section 107, "the fair use of a copyrighted work, including such use by reproduction in copies or phonorecords or by any other means specified by that section, for purposes such as criticism, comment, news reporting, teaching (including multiple copies for classroom use), scholarship, or research, is not an infringement of copyright." This project is not applicable to materials that can be found on the secondhand market.
+Downloading films from YouTube is a violation of their Terms of Service, but not illegal. Under U.S. [Copyright Law Section 107](https://www.law.cornell.edu/uscode/text/17/107), "the fair use of a copyrighted work, including such use by reproduction in copies or phonorecords or by any other means specified by that section, for purposes such as criticism, comment, news reporting, teaching (including multiple copies for classroom use), scholarship, or research, is not an infringement of copyright." This project is not applicable to materials that can be found on the secondhand market.
 
 ## Security
 youtube-dl is blocked on GitHub. In order to download videos from YouTube using the Command Line, yt-dlp (a fork of youtube-dl) must be used. Also, downloading age restricted videos requires an extension, adding another layer of fallibility.
 
-YouTube has the right to block your account for violating their Terms of Service. If using yt-dlp, it is best not to use an institution's official computer or YouTube account. Using an incognito window is required. 
-
-<https://github.com/yt-dlp/yt-dlp/wiki/Extractors#po-token-guide>
-
-##Guide: yt-dlp
+YouTube has the right to block your account for violating their Terms of Service. If using yt-dlp, it is best not to use an institution's official computer or YouTube account. Using an incognito window to generate cookies is highly reccomended. [Here](https://github.com/yt-dlp/yt-dlp/wiki/Extractors#po-token-guide) is a tutorial on how to do that.
 
 ### Prerequisites
-[FFMPEG](https://ffmpeg.org/download.html) is needed by yt-dlp to download the best possible quality file, in whatever file extension you want. In addition, Python is needed on eithier platform to run Library of Congress' Bag-it Python library.
+**Hardware**
+A Linux or MacOS computer with a browser installed as well as a YouTube account.
 
-## Linux
+**Software**
+* [Homebrew](https://brew.sh/) is a package-manager needed to install many application via command-line on MacOS.
+* [FFMPEG](https://ffmpeg.org/download.html) is needed by to get the best possible quality file, in whatever file extension you want. 
+* [yt-dlp](https://github.com/yt-dlp/yt-dlp) yt-dlp is a command-line video downloader need to archive these videos. 
+* [Python](https://www.python.org/) is needed on eithier platform to run Library of Congress' Bag-it Python library and the automated metadata script.
+* [Bagit-Python](https://github.com/LibraryOfCongress/bagit-python) is required to make our downloaded files into a Bag.
 
 
+## MacOS
+If you do not have it installed already, install Homebrew by opening the Terminal app and typing or pasting the following:
+
+$ `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+
+You may need to input your password for the admin user.
+
+Next install ffmpeg:
+$ `brew install ffmpeg`
+
+After installing ffmpeg you can install yt-dlp:
+$ `brew install yt-dlp`
+
+Now python:
+$ `brew install python`
+
+Last but not least, install Bagit:
+$ `pip install bag-it
+
+
+# Installing FFMPEG
 **To install FFMPEG:**
 $ `sudo apt install ffmpeg`
+
+# Installing Python
 
 **To install python:**
 $ `sudo apt-get install python3.13.0`
@@ -51,7 +76,7 @@ $ `yt-dlp --cookies-from-browser examplebrowser --write-info-json example "htpps
 FFMPEG is required to properly run yt-dlp
 
 **To install FFMPEG:**
-$ `brew install ffmpeg`
+
 
 **If the video is age-restricted, and the browser is not installed, cookies must be exported and downloaded. An example command would be:**
 $ `yt-dlp --cookies example.txt --write-info-json example "https://exampleurl.com"`
