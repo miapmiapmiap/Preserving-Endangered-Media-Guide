@@ -5,7 +5,7 @@ This is GitHub guide and tool meant to advise archivists on archiving endangered
 This project outputs a Sumbission Information Package (SIP) for ingestation into an institution according to the Library of Congress' [Bag-it](https://datatracker.ietf.org/doc/html/rfc8493) specification. 
 
 <details>
- <summary>Here is a truncated explanation on SIPs and Bag-it</summary>
+ <summary><strong>Here is a truncated explanation on SIPs and the Bag-it folder structure</strong></summary>
 
 
 ## Submission Information Packages (SIP)
