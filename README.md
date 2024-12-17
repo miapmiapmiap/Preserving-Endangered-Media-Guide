@@ -17,8 +17,11 @@ YouTube has the right to block your account for violating their Terms of Service
 
 ##Guide: yt-dlp
 
-### Linux
-Needs Python and FFMPEG
+### Prerequisites
+[FFMPEG](https://ffmpeg.org/download.html) is needed by yt-dlp to download the best possible quality file, in whatever file extension you want. In addition, Python is needed on eithier platform to run Library of Congress' Bag-it Python library.
+
+## Linux
+
 
 **To install FFMPEG:**
 $ `sudo apt install ffmpeg`
