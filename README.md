@@ -1,17 +1,35 @@
-# Archiving Endangered Films on the Internet
-
+# Archiving Endangered Videos on the Internet
 ## Mission Statement
-This GitHub guide is meant to advise archivists in archiving endangered films currently on the internet. In this project, we are defining "endangered" films as those only streaming on relatively unstable platforms such as YouTube, and are out of print on physical media. This project could also apply to other platforms such as Vimeo or Internet Archive, but we will focus on YouTube for the sake of brevity.
+This is GitHub guide and tool meant to advise archivists on archiving endangered films currently on the internet storage at institutions. In this project, we are defining "endangered" films as those only streaming on relatively unstable platforms such as YouTube, and are out of print on physical media. This project could also apply to other video-hosting platforms but is currently untested.
 
+This project outputs a Sumbission Information Package (SIP) for ingestation into an institution according to the Library of Congress' [Bag-it](https://datatracker.ietf.org/doc/html/rfc8493) specification. 
+
+<details>
+ <summary>Here is a truncated explanation on SIPs and Bag-it</summary>
+
+
+## Submission Information Packages (SIP)
+* SIPs include the data (payload) and all of the related metadata about the content of the payload.
+* It also includes a manifest of every file in the payload with its corresponding checksum.
+* You can can include descriptive elements that provide context such as provenance, contact information, environment of creation, etc.
+* SIPs can also have a README file with any additional information that should exist alongside the data.
+* You can think of SIPs as the file(s) and all the information one would need to facilitate future use.
+
+## BagIt Structure:
+* A set of required and optional tag files.
+* A subdirectory named "data" called the payload directory.
+* A set of optional tag directories.
+* The tag files in the base directory consist of one or more files named "**manifest-algorithm.txt**", a file named "**bagit.txt**", and zero or more additional tag files.
+</details>
 ## Disclaimers
-
-## Legality
 Downloading films from YouTube is a violation of their Terms of Service, but not illegal. Under U.S. [Copyright Law Section 107](https://www.law.cornell.edu/uscode/text/17/107), "the fair use of a copyrighted work, including such use by reproduction in copies or phonorecords or by any other means specified by that section, for purposes such as criticism, comment, news reporting, teaching (including multiple copies for classroom use), scholarship, or research, is not an infringement of copyright." This project is not applicable to materials that can be found on the secondhand market.
 
-## Security
-youtube-dl is blocked on GitHub. In order to download videos from YouTube using the Command Line, yt-dlp (a fork of youtube-dl) must be used. Also, downloading age restricted videos requires an extension, adding another layer of fallibility.
+This process is only known to be permissible under U.S. Law. The fair use analysis that justifies your download of a video is only valid if you live in the U.S. or a territory. Otherwise, it is incumbent upon you to determine whether or not your country allows for fair use. 
 
-YouTube has the right to block your account for violating their Terms of Service. If using yt-dlp, it is best not to use an institution's official computer or YouTube account. Using an incognito window to generate cookies is highly reccomended. [Here](https://github.com/yt-dlp/yt-dlp/wiki/Extractors#po-token-guide) is a tutorial on how to do that.
+## Security
+The orignal youtube-dl repo is blocked. In order to download videos from YouTube using the Command Line, yt-dlp (a fork of youtube-dl) must be used. Most of the tools are third-party ones downloaded via command-line, which may be blocked depending on your institution's IT policies. 
+
+YouTube has the right to block your account for violating their Terms of Service. If using yt-dlp, it is best not to use an institution's official computer or YouTube account. If this is done at significant scale, there is a chance you may be blocked from YouTube.
 
 ### Prerequisites
 **Hardware**
@@ -101,18 +119,18 @@ source python-env/bin/activate
 ```
 Then check for updates:
 ```
-pip update yt-dlp
+pip install --upgrade yt-dlp
 ```
 **Cookies (yum):**
 If the video is age-restricted, or you are worried about the possiblity of being banned from youtube, it is adviseable to follow this [tutorial](https://github.com/yt-dlp/yt-dlp/wiki/Extractors) on how to export your cookies from browser. Most browsers do not allow you to export your cookies out directly, so you will need to install an extension on your browser. Whatever name is exported, make sure the file is renamed `cookies.txt`.
 
 To download a video type the following:
 ```
-yt-dlp -P path/to/folder --write-info-json --restrict-filenames example "https://exampleurl.com"`
+yt-dlp -P path/to/folder --write-info-json --restrict-filenames example "https://exampleurl.com"
 ```
 Or feed yt-dlp cookies:
 ```
-yt-dlp -P path/to/folder --write-info-json example --cookies cookies.txt "https://exampleurl.com"`
+yt-dlp -P path/to/folder --write-info-json example --cookies cookies.txt "https://exampleurl.com"
 ```
 This command will download the video into a folder, but make sure to replace `path/to/folder` to a specified directory. Also make sure to replace `https://exampleurl.com` with a link to your YouTube video. It puts the yt-dlp metadata in a json next to the downloaded video which will then be used in the bagging process. 
 
@@ -127,29 +145,41 @@ bagit.py --contact-name 'Firstname Lastname' /directory/to/bag
 
 **NOTE:** If you are a Linux user make sure you are activated into your python virtual environment.
 
-Next download this [python script](https://github.com/miapmiapmiap/Preserving-Endangered-Media-Guide/blob/main/yt-dlp_bagit.py) and put it in the same directory as the bagged folder (that means outside not inside.)
+Next download this [python script](https://github.com/miapmiapmiap/Preserving-Endangered-Media-Guide/blob/main/yt-dlp_bagit.py) If you want to do this in command-line you can copy this:
+```
+wget https://raw.githubusercontent.com/miapmiapmiap/Preserving-Endangered-Media-Guide/refs/heads/main/yt-dlp_bagit.py
+```
 
 Run the script by typing the following:
 ```
 python yt-dlp_bagit.py
 ```
 
-The script will ask you to input a lot of text, make sure as precisely as possible,
+The script will automatically ask you a series of questions, so make sure to be as precise as possible.
 
+Below are the questions and some sample answers, replace the answers with your own:
+```
+What is the directory to your bag?
+example_directory
+```
+```
+What is your email?
+example@example.com
+```
+```
+"Please describe the data in the bags (e.g. Youtube video and associated metadata from filmmaker Maurice Chevalier.) 
+Youtube video and associated metadata file by filmmaker Simba Pride
+```
+```
+Please write the name of the institution you work for.
+CIA
+```
+```
+Please input the address of the institution you work for.
+110 Ganef Ave, Seattle, Washington, 22244
+```
 
-## Submission Information Packages (SIP)
-* SIPs include the data (payload) and all of the related metadata about the content of the payload.
-* It also includes a manifest of every file in the payload with its corresponding checksum.
-* You can can include descriptive elements that provide context such as provenance, contact information, environment of creation, etc.
-* SIPs can also have a README file with any additional information that should exist alongside the data.
-* You can think of SIPs as the file(s) and all the information one would need to facilitate future use.
+The script will automatically edit the `bag-info.txt`, save and generate new checksums.
 
-## BagIt Structure:
-* A set of required and optional tag files.
-* A subdirectory named "data" called the payload directory.
-* A set of optional tag directories.
-* The tag files in the base directory consist of one or more files named "**manifest-algorithm.txt**", a file named "**bagit.txt**", and zero or more additional tag files.
-
-## BagIt Guide:
-
+Now you are done! Feel free to ingest the bagged-folder into your institution's system. 
 
