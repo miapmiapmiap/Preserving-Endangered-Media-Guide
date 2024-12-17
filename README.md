@@ -108,18 +108,13 @@ If the video is age-restricted, or you are worried about the possiblity of being
 
 To download a video type the following:
 ```
-yt-dlp --write-info-json example "https://exampleurl.com"`
+yt-dlp -P path/to/folder --write-info-json --restrict-filenames example "https://exampleurl.com"`
 ```
 Or feed yt-dlp cookies:
 ```
-yt-dlp -P path/to/folder --cookies cookies.txt --write-info-json example "https://exampleurl.com"`
+yt-dlp -P path/to/folder --write-info-json example --cookies cookies.txt "https://exampleurl.com"`
 ```
-This command will download the video into a folder, but make sure to replace `path/to/folder` to a specified directory. Also make sure to replace `https://exampleurl.com` with a link to your YouTube video. 
-
-
-
-**Before each session, run:**
-$ `brew upgrade yt-dlp`
+This command will download the video into a folder, but make sure to replace `path/to/folder` to a specified directory. Also make sure to replace `https://exampleurl.com` with a link to your YouTube video. It puts the yt-dlp metadata in a json next to the downloaded video which will then be used in the bagging process.
 
 ## Metadata 
 
@@ -139,10 +134,6 @@ $ `brew upgrade yt-dlp`
 ### BagIt Guide:
 
 **Download content (video and .json) to specific folder.**
-
-**Install BagIt:**
-* **(Mac)** `brew install bagit`
-* **(Linux)** `pip install bagit`
 
 **Setup and conform folder to BagIt:**
 **Example:**
