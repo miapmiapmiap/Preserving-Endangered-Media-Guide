@@ -18,14 +18,14 @@ YouTube has the right to block your account for violating their Terms of Service
 A Linux or MacOS computer with a browser installed as well as a YouTube account.
 
 **Software**
-* [Homebrew](https://brew.sh/) is a package-manager needed to install many application via command-line **MacOS Only**.
+* [Homebrew](https://brew.sh/) is a package-manager needed to install many application via command-line **(MacOS only)**.
 * [FFMPEG](https://ffmpeg.org/download.html) is needed by to get the best possible quality file, in whatever file extension you want. 
 * [yt-dlp](https://github.com/yt-dlp/yt-dlp) yt-dlp is a command-line video downloader need to archive these videos. 
-* [Python](https://www.python.org/) is needed on eithier platform to run Library of Congress' Bag-it Python library and the automated metadata script.
+* [Python](https://www.python.org/) is needed on either platform to run Library of Congress' Bag-it Python library and the automated metadata script.
 * [Bagit-Python](https://github.com/LibraryOfCongress/bagit-python) is required to make our downloaded files into a Bag.
 
 
-## Prerequisite Installation (MacOS)
+## Prerequisites Installation (MacOS)
 If you do not have it installed already, install Homebrew by opening the Terminal app and typing or pasting the following:
 
 ```
@@ -53,30 +53,45 @@ Last but not least, install Bagit:
 ```
 pip install bag-it
 ```
-## Prerequisite Installation (Linux)
+## Prerequisites Installation (Linux)
 
-Install
+Install ffmpeg by typing or copying the following:
+```
+sudo apt install ffmpeg
+```
+**Python Install**
+Next, check if Python is already installed:
+```
+python3 -v
+```
+If no version appears e.g. `3.X.X`, you can install python by doing this:
+```
+sudo apt-get install python3.13.0`
+```
+Next, create a new python virtual environment :
+```
+python3 -m env python-env
+```
 
-# Installing FFMPEG
-**To install FFMPEG:**
-$ `sudo apt install ffmpeg`
+Activate your newly created virtual environment:
+```
+source python-env/bin/activate
+```
+(**FYI** this step needs to be taken every session prior to downloading the video.)
 
-# Installing Python
+After activating, you can install yt-dlp:
+```
+pip3 install yt-dlp
+```
+And finally Bagit:
 
-**To install python:**
-$ `sudo apt-get install python3.13.0`
+```
+pip3 install bag-it
+```
 
-**If python is installed but software cannot find it, use:**
-$ `sudo apt install python-is-python3`
+### Using yt-dlp
 
-**A virtual Python environment must be created:**
-$ `python3 -m env python-env`
 
-**Then activate:**
-$ `source python-env/bin/activate`
-
-**Once the Python environment is activated, this command installs yt-dlp:**
-$ `pip3 install yt-dlp`
 
 **If the video is age-restricted, and the browser is not installed, cookies must be exported and downloaded. An example command would be:**
 $ `yt-dlp --cookies example.txt --write-info-json example "https://exampleurl.com"`
