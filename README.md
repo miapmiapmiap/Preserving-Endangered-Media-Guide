@@ -18,32 +18,44 @@ YouTube has the right to block your account for violating their Terms of Service
 A Linux or MacOS computer with a browser installed as well as a YouTube account.
 
 **Software**
-* [Homebrew](https://brew.sh/) is a package-manager needed to install many application via command-line on MacOS.
+* [Homebrew](https://brew.sh/) is a package-manager needed to install many application via command-line **MacOS Only**.
 * [FFMPEG](https://ffmpeg.org/download.html) is needed by to get the best possible quality file, in whatever file extension you want. 
 * [yt-dlp](https://github.com/yt-dlp/yt-dlp) yt-dlp is a command-line video downloader need to archive these videos. 
 * [Python](https://www.python.org/) is needed on eithier platform to run Library of Congress' Bag-it Python library and the automated metadata script.
 * [Bagit-Python](https://github.com/LibraryOfCongress/bagit-python) is required to make our downloaded files into a Bag.
 
 
-## MacOS
+## Prerequisite Installation (MacOS)
 If you do not have it installed already, install Homebrew by opening the Terminal app and typing or pasting the following:
 
-$ `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
 
 You may need to input your password for the admin user.
 
 Next install ffmpeg:
-$ `brew install ffmpeg`
+```
+brew install ffmpeg
+```
 
 After installing ffmpeg you can install yt-dlp:
-$ `brew install yt-dlp`
+```
+brew install yt-dlp
+```
 
 Now python:
-$ `brew install python`
+```
+brew install python
+```
 
 Last but not least, install Bagit:
-$ `pip install bag-it
+```
+pip install bag-it
+```
+## Prerequisite Installation (Linux)
 
+Install
 
 # Installing FFMPEG
 **To install FFMPEG:**
