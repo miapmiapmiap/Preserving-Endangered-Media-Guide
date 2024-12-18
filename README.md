@@ -1,6 +1,6 @@
 # Archiving Endangered Videos on the Internet
 ## Mission Statement
-This is GitHub guide and tool meant to advise archivists on archiving endangered films currently on the internet storage at institutions. In this project, we are defining "endangered" films as those only streaming on relatively unstable platforms such as YouTube, and are out of print on physical media. This project could also apply to other video-hosting platforms but is currently untested.
+This is GitHub guide and tool meant to advise archivists on archiving endangered videos currently on the internet storage at institutions. In this project, we are defining "endangered" videos as those only streaming on relatively unstable platforms such as YouTube, and are out of print on physical media. Any type of video (including films, music videos, vlogs, etc.) on YouTube could be preserved using these tools. This project could also apply to other video-hosting platforms but is currently untested.
 
 This project outputs a Submission Information Package (SIP) for ingestion into an institution according to the Library of Congress' [Bag-it](https://datatracker.ietf.org/doc/html/rfc8493) specification. 
 
