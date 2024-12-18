@@ -123,7 +123,7 @@ Then check for updates:
 pip install --upgrade yt-dlp
 ```
 **Cookies (yum):**
-If the video is age-restricted, or you are worried about the possiblity of being banned from youtube, it is adviseable to follow this [tutorial](https://github.com/yt-dlp/yt-dlp/wiki/Extractors) on how to export your cookies from browser. Most browsers do not allow you to export your cookies out directly, so you will need to install an extension on your browser. Whatever name is exported, make sure the file is renamed `cookies.txt`.
+If the video is age-restricted, or you are worried about the possibility of being banned from youtube, it is advisable to follow this [tutorial](https://github.com/yt-dlp/yt-dlp/wiki/Extractors) on how to export your cookies from browser. Most browsers do not allow you to export your cookies out directly, so you will need to install an extension on your browser. Whatever name is exported, make sure the file is renamed `cookies.txt`.
 
 To download a video type the following:
 ```
@@ -137,7 +137,7 @@ This command will download the video into a folder, but make sure to replace `pa
 
 ### Bag that Bidya
 
-Now that we have our video and metadata downloaded, we need to put them in a Bag. We can do this after installing bag-it by typing the following commmand:
+Now that we have our video and metadata downloaded, we need to put them in a Bag. We can do this after installing bag-it by typing the following command:
 ```
 bagit.py --contact-name 'Firstname Lastname' /directory/to/bag
 ```
